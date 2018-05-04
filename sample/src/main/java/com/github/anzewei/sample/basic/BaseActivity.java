@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import com.github.anzewei.parallaxbacklayout.ParallaxHelper;
 import com.github.anzewei.parallaxbacklayout.ViewDragHelper;
@@ -139,6 +138,9 @@ public class BaseActivity extends AppCompatActivity implements RadioGroup.OnChec
                 break;
             case R.id.btn_none:
                 startActivity(NoneActivity.class);
+                break;
+            case R.id.btn_view_pager:
+                startActivity(ViewPagerActivity.class);
                 break;
         }
     }

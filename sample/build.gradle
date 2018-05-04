@@ -24,5 +24,6 @@ dependencies {
     implementation deps.support.appcompatv7
     implementation deps.support.design
     implementation deps.support.constraintLayout
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     androidTestImplementation deps.junit
 }
