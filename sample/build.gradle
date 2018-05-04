@@ -1,13 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '25.0.0'
-
+    compileSdkVersion versions.compileSdk
     defaultConfig {
         applicationId "com.github.anzewei.sample"
-        minSdkVersion 14
-        targetSdkVersion 24
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
         versionCode 1
         versionName "1.0"
     }
@@ -20,11 +18,11 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':parallaxbacklayout')
-    compile 'com.facebook.stetho:stetho-okhttp3:1.4.1'
-    compile 'com.android.support:appcompat-v7:24.1.1'
-    compile 'com.android.support:design:24.1.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
-    testCompile 'junit:junit:4.12'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':parallaxbacklayout')
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.4.1'
+    implementation deps.support.appcompatv7
+    implementation deps.support.design
+    implementation deps.support.constraintLayout
+    androidTestImplementation deps.junit
 }

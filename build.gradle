@@ -1,11 +1,41 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+    ext.versions = [
+            'minSdk'          : 16,
+            'compileSdk'      : 26,
+            'buildTools'      : '26.0.3',
+            'supportLibrary'  : '26.1.0',
+            'constraintLayout': '1.0.2',
+    ]
+    ext.deps = [
+            'support'    : [
+                    'appcompatv4'     : "com.android.support:appcompat-v4:${versions.supportLibrary}",
+                    'appcompatv7'     : "com.android.support:appcompat-v7:${versions.supportLibrary}",
+                    'gridlayoutv7'    : "com.android.support:gridlayout-v7:${versions.supportLibrary}",
+                    'design'          : "com.android.support:design:${versions.supportLibrary}",
+                    'annotations'     : "com.android.support:support-annotations:${versions.supportLibrary}",
+                    'recyclerview'    : "com.android.support:recyclerview-v7:${versions.supportLibrary}",
+                    'constraintLayout': "com.android.support.constraint:constraint-layout:${versions.constraintLayout}",
+                    'test'            : [
+                            'espresso': 'com.android.support.test.espresso:espresso-core:3.0.2',
+                            'runner'  : 'com.android.support.test:runner:1.0.2',
+                            'rules'   : 'com.android.support.test:rules:1.0.1',
+                    ]
+            ],
+            'junit'      : 'junit:junit:4.12',
+            'assertj'    : 'org.assertj:assertj-core:3.8.0',
+            'mockito'    : 'org.mockito:mockito-core:2.10.0',
+            'robolectric': 'org.robolectric:robolectric:3.4.2',
+            'antTasks'   : 'org.apache.maven:maven-ant-tasks:2.1.3',
+            'findbugs'   : 'com.google.code.findbugs:jsr305:3.0.1',
+    ]
     repositories {
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'com.android.tools.build:gradle:3.0.1'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         // NOTE: Do not place your application dependencies here; they belong
@@ -16,6 +46,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        google()
     }
 }
 
